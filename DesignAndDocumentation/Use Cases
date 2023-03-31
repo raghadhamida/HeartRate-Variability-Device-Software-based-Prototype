@@ -1,0 +1,103 @@
+------------------------USE CASES---------------------------
+
+USE CASE 1: SWITCH POWER BUTTON ON
+ Primary Actor: HeartWave user
+ Goal: The user is successfully able to turn the device on.
+Preconditions:
+•	User has the device
+•	The on/off button is working
+Main success scenario:
+1.	The user presses the on\off button when the device is off.
+2.	The device turns on.
+ Extensions:
+ 2a. The device does not turn on.
+-	User should check device’s battery and charge it.
+
+
+USE CASE 2: SWITCH POWER BUTTON OFF
+ Primary Actor: HeartWave user
+ Goal: The user is successfully able to turn the device off.
+Preconditions:
+•	User has the device
+•	The on/off button is working
+Main success scenario:
+1.	The user presses the on\off button when the device is on.
+2.	The device turns off.
+ 
+
+USE CASE 3: START A NEW SESSION
+ Primary Actor: HeartWave user
+ Goal: The user is able to start a new session.
+Preconditions:
+•	The menu is displayed by default when the device is started and has the “start a new session” option.
+Main success scenario:
+1.	The menu is displayed by default when the device starts.
+2.	The user selects the Start a New Session option from the menu by pressing the selector button on it. 
+3.	A new session is displayed on the screen and begins running.
+Related Information:
+-	The user could also initiate a session by pressing the selector button.
+
+ 
+USE CASE 4: END A SESSION
+ Primary Actor: HeartWave user
+ Goal: The user is able to end the session.
+Preconditions:
+•	The selector button is working.
+Main success scenario:
+1.	The user presses the selector button to end the session.
+2.	When the user ends the session, a summary view will appear that includes the following information: challenge level, percentage of time in different coherence levels (low medium and high), average coherence, length of session, achievement score, entire HRV graph.
+
+USE CASE 5: USER CHANGES CHALLENGE LEVEL
+ Primary Actor: HeartWave user
+ Goal: The user is able to navigate and change the challenge level for coherence.
+Preconditions:
+•	Menu, settings, and challenge level are existing buttons.
+Main success scenario:
+1.	The user presses the menu button or the back button.
+2.	From the menu options, the user selects Settings.
+3.	From the settings, user chooses “Change Challenge Level”.
+4.	User chooses to change between 4 different levels from 1-4 (beginner to advanced).
+
+USE CASE 6: BREATH PACER
+ Primary Actor: HeartWave user
+ Goal: The user is able to navigate and change the breath pacer interval.
+Preconditions:
+•	Menu, settings, and breath pacer are existing buttons.
+Main success scenario:
+1.	The user presses the menu button or the back button.
+2.	From the menu options, the user selects Settings.
+3.	From the settings, user chooses “Breath Pacer”.
+4.	User chooses to change the time interval level between each breath from 1-30 seconds, default is at 10 sec.
+
+
+USE CASE 7: VIEW LOG/HISTORY OF SESSIONS
+ Primary Actor: HeartWave user
+ Goal: The user is able to navigate and view the history of the previous sessions.
+Preconditions:
+•	Menu and log/history are existing buttons.
+Main success scenario:
+1.	The user presses the menu button or the back button.
+2.	From the menu options, the user selects Log/History.
+3.	The user can view all sessions that happened and the dates, and when selected it shows the session’s summary view. If no sessions happened, nothing displays.
+
+USE CASE 8: DELETE A SESSION
+ Primary Actor: HeartWave user
+ Goal: The user is able to navigate and delete a specific session.
+Preconditions:
+•	Menu, log/history, delete session are existing buttons.
+Main success scenario:
+1.	The user presses the menu button or the back button.
+2.	From the menu options, the user selects Log/History.
+3.	From the displayed sessions, the user selects the one they want to delete.
+4.	The user presses the “Delete Session” button.
+
+USE CASE 9: RESETTING DEVICE
+ Primary Actor: HeartWave user
+ Goal: The user is able to navigate and reset the whole device.
+Preconditions:
+•	Menu, log/history, reset (wipe all sessions data) are existing buttons.
+Main success scenario:
+1.	The user presses the menu button or the back button.
+2.	From the menu options, the user selects Log/History.
+3.	The user presses the “Reset (wipe all sessions data)” button
+
