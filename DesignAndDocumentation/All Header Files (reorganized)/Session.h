@@ -1,14 +1,31 @@
-class Session {
-private:
-	int[] metrics; //to store the metrics
-	int duration; 
-	int challengeLevel; 
-	int interval; //the breath pacer interval
+#ifndef SESSION_H
+#define SESSION_H
+
+#include <QObject>
+#include <QTimer>
+
+class Session : public QObject
+{
+    Q_OBJECT
+
 public:
-	void start(); //(these two funcs are-
-	void end(); //-for starting and ending session)
-	void updateMetrics(); 
-	void setChallengeLevel(); 
-	void setInterval(); 
-	void getSummary();
+    explicit Session(QObject *parent = nullptr);
+    void start();
+    void end();
+    void updateMetrics();
+    void setInterval(int breathPacerInterval);
+    ~Session();
+    void calculateCoherenceScore();
+
+
+
+private:
+    int metrics[3] = {0, 0, 0};
+    int duration;
+    int achievement;
+    int breathPacerInterval;
+    int coherenceScore;
 };
+
+
+#endif // SESSION_H
