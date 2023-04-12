@@ -1,8 +1,18 @@
+#ifndef HISTORY_H
+#define HISTORY_H
+
+#include <vector>
+#include "Session.h"
+
 class History {
 private:
-	Session[] sessions; //stores the sessions (obj's)
+    std::vector<Session> sessions; //stores the sessions (obj's)
 public:
-	void addSession(); 
-	void deleteSession(); 
-	void getSessions();
+    History(); // constructor
+    void addSession();
+    void deleteSession(int index); // takes an index parameter
+    void getSessions();
 };
+
+#endif
+
