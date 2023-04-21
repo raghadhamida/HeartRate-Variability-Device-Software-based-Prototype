@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QTimer>
 
+//class for handling each session's functionality and data
 class Session : public QObject
 {
     Q_OBJECT
