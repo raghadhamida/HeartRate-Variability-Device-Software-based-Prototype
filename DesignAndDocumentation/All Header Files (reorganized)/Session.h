@@ -15,7 +15,6 @@ public:
     void updateMetrics();
     void setInterval(int breathPacerInterval);
     ~Session();
-    void calculateCoherenceScore();
 
 
 
