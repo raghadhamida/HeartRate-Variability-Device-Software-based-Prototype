@@ -1,5 +1,6 @@
 #include "Session.h"
 
+//constructor initializing private members
 Session::Session(QObject *parent)
     : QObject(parent)
 {
@@ -11,8 +12,9 @@ Session::Session(QObject *parent)
     metrics[2] = 0;
 }
 
-Session::~Session(){}
+Session::~Session(){} //destructor
 
+//function to initialize and start the session timer
 void Session::start() {
     QTimer* timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, [this]() {
@@ -30,6 +32,7 @@ void Session::start() {
     timer->start(5000); // Start the timer for the first update
 }
 
+//updating the metrics on the screen every 5 seconds
 void Session::updateMetrics() {
     int newMetrics[3] = {0, 0, 0}; // Initialize new metrics to zero
     newMetrics[0] = coherenceScore;
@@ -43,13 +46,12 @@ void Session::updateMetrics() {
     achievement = metrics[0] + metrics[1] + metrics[2];
 }
 
-
+//setting the breath pacer interval
 void Session::setInterval(int breathPacerInterval){
     this->breathPacerInterval = breathPacerInterval;
 }
 
-void Session::calculateCoherenceScore(){}
-
+//ending the session
 void Session::end() {
     qDebug() << "Session ended. Final Metrics:";
     qDebug() << "Coherence Score: " << metrics[0];
