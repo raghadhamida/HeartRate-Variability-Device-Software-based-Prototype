@@ -1,0 +1,9 @@
+Anna Alchoujian
+UML Diagram Explanation
+
+The User starts the Session, the isSessionOn bool in User then turns to true. 
+The Session class keeps a History of Sessions in its private vector data structure. 
+Session also uses PulseReading to read the pulse, 
+and PulseReading accesses the CoherenceIndicator class through the setIndicator() function.
+
+Note: the built-in Q classes QObject, QLabel, QTimer, and QMainwindow are used as well.
