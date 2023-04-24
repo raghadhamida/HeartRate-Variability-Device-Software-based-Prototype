@@ -1,18 +1,4 @@
-#include <QObject>
-class PulseReading : public QObject 
-{
-    Q_OBJECT
-private:
-    bool isActive;
-public:
-    explicit PulseReading(QObject *parent = nullptr);
-    void startReading();
-    void stopReading();
-    void setIndicator();
-signals:
-    void pulseReadingStarted();
-    void pulseReadingStopped();
-};
+#include "pulsereading.h"
 
 PulseReading::PulseReading(QObject *parent) : QObject(parent)
 {
