@@ -1,4 +1,4 @@
-#include "Session.h"
+#include "session.h"
 
 //constructor initializing private members
 Session::Session(QObject *parent)
@@ -12,7 +12,7 @@ Session::Session(QObject *parent)
     metrics[2] = 0;
 }
 
-Session::~Session(){} //destructor
+Session::~Session(){}//destructor
 
 //function to initialize and start the session timer
 void Session::start() {
