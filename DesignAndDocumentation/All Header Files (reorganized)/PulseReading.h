@@ -1,11 +1,21 @@
-class PulseReading { 
-//responsible for reading the pulse.
-//the bool is the symbol indicating an active pulse reading
-//has functions to start & stop as well as to indicate output
+#ifndef PULSEREADING_H
+#define PULSEREADING_H
+
+#include <QObject>
+
+class PulseReading : public QObject
+{
+    Q_OBJECT
 private:
-	bool isActive;
+    bool isActive;
 public:
-	void startReading();
-	void stopReading(); 
-	void setIndicator();
+    explicit PulseReading(QObject *parent = nullptr);
+    void startReading();
+    void stopReading();
+    void setIndicator();
+signals:
+    void pulseReadingStarted();
+    void pulseReadingStopped();
 };
+
+#endif // PULSEREADING_H
