@@ -1,42 +1,32 @@
-#include "history.h"
+#include "coherenceindicator.h"
 
-// Constructor initializes the sessions array
-History::History() {
-    // Set the sessions array to an empty vector
-    sessions = QVector<Session>();
+
+CoherenceIndicator::CoherenceIndicator(std::string ledWidget) : coherenceLevel(0), led(ledWidget)
+{
+    //constructor initializes LED widget to off
+    led->setColor(Qt::black);
+    led->turnOff();
 }
 
-// Implementation of addSession method
-void History::addSession() {
-    // Create a new session object
-    Session newSession;
-    // Add the new session object to the sessions vector
-    sessions.append(newSession);
+void CoherenceIndicator::setLevel(int level)
+{
+    coherenceLevel = level;
+    setLED();
 }
 
-// Implementation of deleteSession method
-void History::deleteSession(int sessionIndex) {
-    // Check if the session index is valid
-    if (sessionIndex < 0 || sessionIndex >= sessions.size()) {
-        qDebug() << "Invalid session index.";
-        return;
+void CoherenceIndicator::setLED() {
+    //set LED light based on coherence level
+    if (coherenceLevel <= 33)
+    {
+        led->setColor(Qt::red);
     }
-    // Remove the session at the specified index from the sessions vector
-    sessions.remove(sessionIndex);
-}
-
-
-// Implementation of getSessions method
-void History::getSessions() {
-    // Check if there are any sessions to display
-    if (sessions.size() == 0) {
-        qDebug() << "No sessions to display.";
-        return;
+    else if (coherenceLevel <= 66)
+    {
+        led->setColor(Qt::blue);
     }
-    // Display each session in the sessions vector
-    for (int i = 0; i < sessions.size(); i++) {
-        qDebug() << "Session " << i+1 << ":";
-        sessions[i].displaySession();
+    else
+    {
+        led->setColor(Qt::green);
     }
+    led->turnOn();
 }
-
