@@ -1,12 +1,17 @@
-#include "User.h"
-#include "Session.h"
+#include "user.h"
+#include "session.h"
+
+User::User()
+{
+
+}
 
 void User::on(){
     if(!isDeviceOn){
         isDeviceOn=true;
         displayMenu();
     }
-        
+
 
 }
 void User::off(){
@@ -15,7 +20,7 @@ void User::off(){
         isSessionOn=false;
         currentSession.end();
     }
-        
+
 }
 void User::displayMenu(){
 
@@ -39,7 +44,7 @@ void User::displayMenu(){
 void User::displaySettings(){
     cout<<"Challenge Level"<<endl;
     cout<<"BreadPacer"<<endl;
-    
+
     currentSession.updateMetrics();
 
 }
@@ -56,7 +61,7 @@ void User::selectMenuOption(int option){
             isSessionOn=false;
             currentSession.end();
         }
-        
+
     }
     if(option==3){
         displaySettings();
@@ -81,8 +86,3 @@ void User::selectSession(Session s){
 void User::sessionDelete(Session s){
     history.deleteSession(s);
 }
-
-
-
-
-
