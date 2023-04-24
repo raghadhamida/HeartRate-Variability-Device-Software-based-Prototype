@@ -6,9 +6,9 @@ Final Project README
 -----------------------------
 MEMBERS
 
-Raghad Hamida
-Anna Alchoujian
-Mohsen El-hage
+Raghad Hamida,
+Anna Alchoujian,
+Mohsen El-hage,
 Abdul Rahman Hamdan 
 
 -----------------------------
