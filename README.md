@@ -26,3 +26,7 @@ Abdul Rahman:  wrote Qt C++ file for User, made Traceability Matrix and database
 GITHUB LINK:
 
 https://github.com/raghadhamida/COMP3004-Project.git
+
+
+
+we suggest manually importing the database creation SQL file thats in the "qt c++ folder" into their database management system as the qt creator only accepts cpp files and structure/format
