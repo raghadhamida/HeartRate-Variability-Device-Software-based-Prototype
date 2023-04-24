@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QTimer>
 
-//class for handling each session's functionality and data
+//class for hadling each session's functionality and data
 class Session : public QObject
 {
     Q_OBJECT
@@ -26,6 +26,5 @@ private:
     int breathPacerInterval;
     int coherenceScore;
 };
-
 
 #endif // SESSION_H
