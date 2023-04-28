@@ -2,7 +2,7 @@
 #define PULSEREADING_H
 
 #include <QObject>
-
+#include "coherenceindicator.h"
 class PulseReading : public QObject
 {
     Q_OBJECT
