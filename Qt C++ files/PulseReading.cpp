@@ -1,4 +1,5 @@
 #include "pulsereading.h"
+#include "src/coherenceindicator.h"
 
 PulseReading::PulseReading(QObject *parent) : QObject(parent)
 {
@@ -17,7 +18,9 @@ void PulseReading::stopReading()
     emit pulseReadingStopped(); //emits the signal (CHECK THIS)
 }
 
+/*
 void PulseReading::setIndicator(CoherenceIndicator& indicator, int coherenceLevel)
 { //takes reference to a CoherenceIndicator object and int coherence level as args
     indicator.setLevel(coherenceLevel); //sets coherence level using setLevel() from CoherenceIndicator
 }
+*/
