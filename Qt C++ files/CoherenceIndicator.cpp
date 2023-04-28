@@ -1,5 +1,4 @@
-#include "coherenceindicator.h"
-
+/*#include "coherenceindicator.h"
 
 CoherenceIndicator::CoherenceIndicator(std::string ledWidget) : coherenceLevel(0), led(ledWidget)
 {
@@ -30,3 +29,4 @@ void CoherenceIndicator::setLED() {
     }
     led->turnOn();
 }
+*/
