@@ -25,25 +25,25 @@ void User::off(){
 void User::displayMenu(){
 
     //button to start a new session 1
-    cout<<"Start a new Session"<<endl;
+    qDebug() <<"Start a new Session";
 
     //Button to end a new session 2
-    cout<<"End current Session"<<endl;
+    qDebug() <<"End current Session";
 
     //Settings 3
-    cout<<"Settings"<<endl;
+    qDebug() <<"Settings";
 
     //Log/History 4
-    cout<<"Show Log/History"<<endl;
+    qDebug() <<"Show Log/History";
 
     // Reset 5
-    cout<<"Reset"<<endl;
+    qDebug() <<"Reset";
 
 
 }
 void User::displaySettings(){
-    cout<<"Challenge Level"<<endl;
-    cout<<"BreadPacer"<<endl;
+    qDebug() <<"Challenge Level";
+    qDebug() <<"BreadPacer";
 
     currentSession.updateMetrics();
 
@@ -54,7 +54,7 @@ void User::selectMenuOption(int option){
         isSessionOn=true;
         currentSession = Session();
         currentSession.start();
-        history.addSession(currentSession);
+        history.addSession();
     }
     if(option==2){
         if(isSessionOn){
@@ -71,7 +71,7 @@ void User::selectMenuOption(int option){
         history.getSessions();
     }
     if(option==5){
-        vector<Session> sessions = history.getSessions();
+        QVector<Session> sessions = history.getSessions();
         for(int i=0;i<sessions.size();i++){
             // update metrics vector to null
             sessions[i].updateMetrics();
@@ -81,8 +81,5 @@ void User::selectMenuOption(int option){
 
 }
 void User::selectSession(Session s){
-    s.getSummary();
-}
-void User::sessionDelete(Session s){
-    history.deleteSession(s);
+    s.end();
 }
