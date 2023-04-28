@@ -1,8 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "user.h"
-#include "session.h"
-#include "history.h"
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -13,6 +11,8 @@ MainWindow::MainWindow(QWidget *parent)
     powerStatus = false;
     changePower();
     connect(ui->powerButton, &QPushButton::released, this, &MainWindow::powerChange);
+    connect(ui->menuButton, &QPushButton::released, this, &MainWindow::menu);
+    //activeQListWidget = ui->mainMenuList;
 }
 
 MainWindow::~MainWindow()
@@ -37,13 +37,19 @@ void MainWindow::changePower(){
     ui->downButton->setEnabled(powerStatus);
     ui->leftButton->setEnabled(powerStatus);
     ui->rightButton->setEnabled(powerStatus);
-    ui->menuButton->setEnabled(powerStatus);
+    //ui->menuButton->setEnabled(powerStatus);
     ui->okButton->setEnabled(powerStatus);
     ui->backButton->setEnabled(powerStatus);
-    ui->powerButton->setEnabled(powerStatus);
 }
 
 void MainWindow::powerChange(){
     powerStatus = !powerStatus;
     changePower();
+}
+
+void MainWindow::menu(){
+
+    ui->mainMenuList->setVisible(true);
+    ui->mainMenuList->addItems({"Start Session", "Settings", "Show History", "Reset"});
+    ui->mainMenuList->setCurrentRow(0);
 }
