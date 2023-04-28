@@ -2,8 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QListWidget>
 #include "session.h"
-#include "history.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,7 +21,11 @@ private:
     Ui::MainWindow *ui;
     bool powerStatus;
     int currentTimerCount;
+    //QListWidget *activeQListWidget;
     Session* currentSession;
     void changePower();
+    void menu();
+    void powerChange();
+
 };
 #endif // MAINWINDOW_H
